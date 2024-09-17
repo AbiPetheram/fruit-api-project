@@ -18,6 +18,10 @@ public class FruitRepository {
     private MutableLiveData<List<Fruit>> mutableLiveData = new MutableLiveData<>();
     private Application application;
 
+    public FruitRepository(Application application) {
+        this.application = application;
+    }
+
     public MutableLiveData<List<Fruit>> getMutableLiveData(){
         ApiService apiService = RetrofitInstance.getService();
         Call<List<Fruit>> call = apiService.getAllFruit();
